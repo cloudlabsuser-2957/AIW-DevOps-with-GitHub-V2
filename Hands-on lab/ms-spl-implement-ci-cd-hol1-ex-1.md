@@ -3,7 +3,8 @@
 ### Estimated Duration: 140 Minutes
 
 ## Overview
-In this hands-on lab, you are going to set up the local infrastructure using .NET. There are three parts of the application you will be working with: carts, products, and ui. You will deploy the infrastructure to the cloud using GitHub Actions. You will also build automation in GitHub for updating and republishing our workflows when the code changes.
+
+In this lab, you are going to set up the local infrastructure using .NET. There are three parts of the application you will be working with: carts, products, and ui. You will deploy the infrastructure to the cloud using GitHub Actions. You will also build automation in GitHub for updating and republishing our workflows when the code changes.
 
 ## Objectives
 
@@ -91,7 +92,7 @@ In this task, you will set up the local infrastructure using NET. You'll be work
    dotnet build && dotnet run --no-build
    ```  
 
-   ![](media/L1T2S7-0501.jpg) 
+   ![](media/L1T2S7-0501.png) 
    
    >**Note:** Please wait for 2 - 3 minutes for the build to complete.
    
@@ -107,7 +108,7 @@ In this task, you will set up the local infrastructure using NET. You'll be work
        
     ![](media/localhost1.png) 
    
-   * Then click on **Continue to localhost (unsafe)** to access the application.
+   Then click on **Continue to localhost (unsafe)** to access the application.
 
       ![](media/localhost2.png)   
    
@@ -188,9 +189,9 @@ In this task, you will set up the local infrastructure using NET. You'll be work
 
 In this task, you'll access the GitHub Enterprise account and create a new repository to store the infrastructure.
 
-1. In a new browser tab, go to `https://www.github.com/login`.
+1. In a new browser tab, go to `https://www.github.com/login`. and login using GitHub credentials.
 
-1. Navigate to the **Environment (1)** tab in the lab environment and click on the **Licenses (2)** button. Copy the **GitHub UserEmail and GitHub Password (3)**, then save these credentials in **Notepad**. You will need them later during the GitHub login and device verification steps.
+1. To find the GitHub credentials, navigate to the **Environment (1)** tab in the lab environment and click on the **Licenses (2)** button. Copy the **GitHub UserEmail and GitHub Password (3)**, then save these credentials in **Notepad**. You will need them later during the GitHub login and device verification steps.
 
    ![](media/L1T3S2-0501.png)
 
@@ -323,7 +324,7 @@ In this task, you'll access the GitHub Enterprise account and create a new repos
 
     ![](media/ex_1_g_12.png)   
 
-    (iii) After completing the previous step, navigate back to VS Code and rerun step 22 to finish the push process.
+    (iii) After completing the previous step, navigate back to VS Code and execute the command `git push -u <Unique-ID> main` again. 
 
 ## Task 4: Build and push using GitHub Actions
 
@@ -420,7 +421,7 @@ In this task, you will build automation in GitHub for updating and republishing 
  
       >**Note:** If prompted to **Install** an extension, please proceed with the installation and **Allow** any **Visual Studio** pop-ups that appear.
 
-      > It will redirect you to the new tab of the browser. On the **Select user to authorize Visual Studio Code** page, select **Continue**. On the pop-up, select **Open**.
+      > It will redirect you to the new tab of the browser, where the Visual Studio code will open on web. 
    
 1. Run the below-mentioned commands in the **Terminal**. You'll set the node version to node 14.
 
@@ -447,7 +448,7 @@ In this task, you will build automation in GitHub for updating and republishing 
 
 1. Select **contoso-traders-<inject key="DeploymentID" enableCopy="false" />** resource group from the list.
 
-    ![](media/E1T4S17.png)
+    ![](media/L1TS1-0501.png)
 
 1. Search for **ui2 (1)** and select **contosotradersui2<inject key="DeploymentID" enableCopy="false" /> (2)** storage account from the list.
 
@@ -459,7 +460,7 @@ In this task, you will build automation in GitHub for updating and republishing 
 
      ![](media/E1T4S19.png)
 
-1. Navigate back to the **contoso-traders-cdn<inject key="DeploymentID" enableCopy="false" /> (1)** resource group and select **contoso-traders-cdn<inject key="DeploymentID" enableCopy="false" /> (2)** endpoint from the list of resources.
+1. Navigate back to the **contoso-traders-<inject key="DeploymentID" enableCopy="false" /> (1)** resource group and select **contoso-traders-cdn<inject key="DeploymentID" enableCopy="false" /> (2)** endpoint from the list of resources.
 
     ![](media/fnd1.png)
 
@@ -485,27 +486,15 @@ The last task automated building and updating only one of the Docker images. In 
    
      >**Note:** In case you had created a  codespace in the  previous task. Click on the **+** button to create a new codespace.
    
-1. You will be redirected to a new Codespace tab in your browser. Click **Continue**.
-
-   ![](media/ex_1_g_19.png)
-
-1. When prompted with a message saying the site is trying to open Visual Studio Code, check the box labeled **Always allow [http://127.0.0.1:56159](http://127.0.0.1:56159) to open links of this type in the associated app** **(1)**, then click the **Open (2)** button to proceed.
-
-   ![](media/ex_1_g_20.png)
-
-      >**Note:** If prompted to **Install** an extension, please proceed with the installation and **Allow** any **Visual Studio** pop-ups that appear.
-
-      > You will be redirected to a new browser tab. On the Select user to authorize Visual Studio Code page, click Continue. When prompted, select Open in the pop-up window. Then, choose your GitHub account and click Continue.
+1. You will be redirected to a new Codespace tab in your browser. This will open VSCode in the new tab of the browser. 
       
-1. From the explorer side blade, navigate to **.github (1)** -> **workflows** **(2)** and select **contoso-traders-provisioning-deployment.yml** **(3)** file.
+1. From the explorer side blade, navigate to **.github (1)** -> **workflows** **(2)** and select **contoso-traders-provisioning-deployment-old.yml** **(3)** file.
 
-   ![](media/ex-1-31.png) 
+   ![](media/L1T5S3-0501.png) 
 
 1. Remove the commands from lines **7 to 14** from the workflow file.
 
-   ![](media/ex-1-32.png)
-
-   ![](media/ex-1-33.png) 
+   ![](media/L1T5S4-0501.png)
    
    >**Note:** Press **CTRL + S**, to save the changes, if needed.
 
@@ -517,22 +506,22 @@ The last task automated building and updating only one of the Docker images. In 
    git push
    ```
 
-   ![](media/ex-1-34.png)
+   ![](media/L1T5S5-0501.png)
     
    > **Note:** This will update the workflow and will **not** run the "Update the ... Docker image" jobs.
 
 1. Navigate back to the GitHub browser, select the **Actions (1)** tab, and review the **workflow (2)** in the **All workflows** section, created automatically for the changes made. Please wait until the execution completes.
 
    ![](media/lab1-laststepA.png)
+
    ![](media/lab1-laststepB.png)
 
-## Review
-In this exercise you have completed the following:
- - Set up local infrastructure using .NET for a sample application with carts, products, and UI components.
- - Deployed the infrastructure to the cloud using GitHub Actions.
- - Implemented automation in GitHub to update and republish workflows upon code changes.
+## Summary
+
+In this lab, you have imaged a sample application with carts, products, and UI components using .NET. You deployed the infrastructure to Azure using GitHub Actions. You also built automation in GitHub for updating and republishing our workflows when the code changes.
 
 ### You have successfully completed the Lab. Click on Next >> to proceed with the next Lab.
 
 ![](media/CICD---NEXT-PAGE.png)
+
 
