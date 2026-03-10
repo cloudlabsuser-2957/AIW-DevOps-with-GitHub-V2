@@ -192,6 +192,12 @@ In this task, you will set up the local infrastructure using NET. You'll be work
    ![](media/2dgn156.png) 
    
    >**Note:** It can take 5 - 10 minutes when you execute the command for the first time. You can continue with the next task and check on this step later.   
+
+   > If you get errors such as "react is not recognized" or missing dependencies, reinstall the project packages: `npm ci`
+
+   > If you see a caniuse-lite is outdated warning or error, run: `npx update-browserslist-db@latest`
+   
+   > After fixing the issue, run the application again: `npm run start`
    
 ## Task 3: Create the Project Repo
 
