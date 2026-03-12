@@ -96,11 +96,17 @@ In this task, you will set up the local infrastructure using NET. You'll be work
    
    >**Note:** Please wait for 2 - 3 minutes for the build to complete.
    
-1. Keep the terminal running. Open a new browser tab and try accessing the application using localhost port. You'll be able to see the output similar to the screenshot mentioned below.
+1. Once the script starts successfully, keep the terminal running. Do not close it, as the application will be running from this terminal session.
 
-   ```pwsh
-   https://localhost:62300/swagger
-   ```  
+3. In the terminal output, you will see a **localhost URL** with a specific **port** number where the application is hosted.
+
+4. Open a new tab in your web browser and **enter the localhost URL** shown in your terminal.
+
+5. For example, if your application runs on port `62400`, you can access it using:
+
+   https://localhost:62400/swagger
+
+6. If your terminal shows a different port number, simply replace `62400` in the example URL with the port number displayed in your terminal.
 
    ![](media/ex_1_g_1.png)     
    
