@@ -174,7 +174,7 @@ In this task, you'll explore how secret scanning works and see how it generates 
 
    ![](media/L2T4S1-0501.png)
     
-1. Select **Code security** from the sidebar and make sure **Secret scanning** and **Push protection** is **Enabled**.
+1. Select **Code security** from the sidebar and make sure **Secret Protection** and **Push protection** is **Enabled**.
 
    ![](media/2dg111a.png)   
     
